@@ -32,12 +32,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
-          cache-dependency-path: website/package-lock.json
 
       - name: Install dependencies
         working-directory: website
         run: npm install --legacy-peer-deps
+
+      - name: Remove production custom-domain file
+        working-directory: website
+        run: rm -f public/CNAME
 
       - name: Build preview for GitHub Pages project path
         working-directory: website
