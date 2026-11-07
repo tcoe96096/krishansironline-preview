@@ -1,4 +1,4 @@
-# Dedicated preview deployment for the full website redesign branch.
+# Dedicated preview deployment for the latest full website redesign and review updates.
 name: Deploy Full Website Redesign Preview
 
 on:
