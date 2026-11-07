@@ -2,6 +2,9 @@ name: Deploy PR #22 Preview
 
 on:
   workflow_dispatch:
+  push:
+    branches: ["main"]
+    paths: [".github/workflows/pr22-preview.yml"]
 
 permissions:
   contents: read
