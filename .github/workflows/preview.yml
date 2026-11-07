@@ -28,6 +28,18 @@ jobs:
           ref: design/separate-header-hero-backgrounds
           path: website
 
+      - name: Checkout main branch assets
+        uses: actions/checkout@v4
+        with:
+          repository: tcoe96096/krishansironline
+          ref: main
+          path: main-assets
+
+      - name: Restore Header background image from main
+        run: |
+          mkdir -p website/public/images
+          cp main-assets/public/images/file_00000000eb6482108586a0d9a2d631c8.png website/public/images/
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
