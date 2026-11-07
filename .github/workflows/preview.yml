@@ -2,8 +2,6 @@ name: Deploy PR #20 preview to GitHub Pages # refresh after approved logo fix
 
 on:
   workflow_dispatch:
-  push:
-    branches: ["main"]
 
 permissions:
   contents: read
