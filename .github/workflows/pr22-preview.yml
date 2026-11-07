@@ -1,5 +1,5 @@
-# Existing dedicated preview site; rebuild from the latest PR #22 branch on each refresh.
-name: Deploy PR #22 Preview
+# Dedicated preview deployment for the full website redesign branch.
+name: Deploy Full Website Redesign Preview
 
 on:
   workflow_dispatch:
@@ -23,11 +23,11 @@ jobs:
       - name: Checkout preview repository
         uses: actions/checkout@v4
 
-      - name: Checkout PR #22 source
+      - name: Checkout redesign source
         uses: actions/checkout@v4
         with:
           repository: tcoe96096/krishansironline
-          ref: hero-header-home-footer-preview
+          ref: full-site-redesign-preview
           path: source
 
       - name: Set up Node.js
@@ -39,7 +39,7 @@ jobs:
         working-directory: source
         run: npm install --legacy-peer-deps
 
-      - name: Build PR #22 for preview URL
+      - name: Build redesign for preview URL
         working-directory: source
         run: npm run build -- --base=/krishansironline-preview/
 
