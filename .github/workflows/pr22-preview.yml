@@ -1,5 +1,5 @@
 # Dedicated preview deployment for the latest full website redesign and review updates.
-name: Deploy Full Website Redesign Preview
+name: Deploy Full Website Redesign Preview # refresh after header layout update
 
 on:
   workflow_dispatch:
