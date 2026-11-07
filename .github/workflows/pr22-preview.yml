@@ -1,5 +1,5 @@
 # Dedicated preview deployment for the latest full website redesign and review updates.
-name: Deploy Full Website Redesign Preview # refresh after fixing logo size and reducing header height further
+name: Deploy Full Website Redesign Preview # refresh after reducing logo by one-third and compacting branding
 
 on:
   workflow_dispatch:
