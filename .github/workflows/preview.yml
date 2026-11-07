@@ -1,4 +1,4 @@
-name: Deploy PR #10 preview to GitHub Pages
+name: Deploy PR #20 preview to GitHub Pages
 
 on:
   workflow_dispatch:
@@ -21,11 +21,11 @@ jobs:
       - name: Checkout preview repository
         uses: actions/checkout@v4
 
-      - name: Checkout website PR #10 source
+      - name: Checkout website PR #20 source
         uses: actions/checkout@v4
         with:
           repository: tcoe96096/krishansironline
-          ref: feature/brand-online-learning
+          ref: design/separate-header-hero-backgrounds
           path: website
 
       - name: Set up Node.js
