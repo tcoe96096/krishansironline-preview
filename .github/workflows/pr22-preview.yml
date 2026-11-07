@@ -1,5 +1,5 @@
 # Dedicated preview deployment for the latest full website redesign and review updates.
-name: Deploy Full Website Redesign Preview # refresh teacher frame inner and outer padding proportions
+name: Deploy Full Website Redesign Preview # undo doubled inner teacher frame padding; retain reduced outer padding
 
 on:
   workflow_dispatch:
