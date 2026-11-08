@@ -107,3 +107,5 @@ jobs:
 # Rebuild trigger: align student dashboard available-test count with class eligibility.
 
 # Rebuild trigger: display authenticated student name in header and floating account control.
+
+# Rebuild trigger: add authenticated student account dropdown menu in Preview.
