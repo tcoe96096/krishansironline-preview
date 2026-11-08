@@ -82,3 +82,5 @@ jobs:
 # Rebuild trigger: refresh visible attempt-limit message on language toggle.
 
 # Rebuild trigger: derive attempt-limit alert language directly from selected test language.
+
+# Rebuild trigger: preserve GitHub Pages Preview base path during internal navigation.
