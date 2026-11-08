@@ -115,3 +115,5 @@ jobs:
 # Rebuild trigger: responsive HI/EN mobile and Hindi/English desktop language switcher.
 
 # Rebuild trigger: mobile header uses a clean two-row layout for branding and controls.
+
+# Rebuild trigger: correct mobile header flex column layout to prevent branding compression.
