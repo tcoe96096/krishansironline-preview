@@ -1,4 +1,5 @@
 # Dedicated preview deployment for the latest full website redesign and review updates.
+# Rebuild trigger for the student test-attempt start-gate fix.
 name: Deploy Full Website Redesign Preview # restore original outer teacher frame padding
 
 on:
