@@ -125,3 +125,5 @@ jobs:
 # Rebuild trigger: mobile navigation now contains Search, HI/EN, and Student Login after Menu.
 
 # Rebuild trigger: remove duplicate mobile Menu and unify Search, HI/EN, and Student Login controls.
+
+# Rebuild trigger: keep mobile Menu on the left and utility controls on the right.
