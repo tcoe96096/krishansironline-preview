@@ -1,5 +1,5 @@
 # Dedicated preview deployment for the latest full website redesign and review updates.
-# Rebuild trigger for the student test-submission confirmation formatting fix.
+# Rebuild trigger for the student attempt-limit friendly message.
 name: Deploy Full Website Redesign Preview # restore original outer teacher frame padding
 
 on:
