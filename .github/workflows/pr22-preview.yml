@@ -74,3 +74,5 @@ jobs:
 # Rebuild trigger for robust Supabase attempt-limit error detection.
 
 # Rebuild trigger for attempt-history precheck message.
+
+# Rebuild trigger for language-aware attempt-limit message.
