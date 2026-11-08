@@ -101,3 +101,5 @@ jobs:
 # Rebuild trigger: compact floating student login button for mobile screens.
 
 # Rebuild trigger: reduce floating student login label to Login on mobile.
+
+# Rebuild trigger: restore full Student Login label on mobile.
