@@ -99,3 +99,5 @@ jobs:
 # Rebuild trigger: remove duplicate global Window declaration in preview source.
 
 # Rebuild trigger: compact floating student login button for mobile screens.
+
+# Rebuild trigger: reduce floating student login label to Login on mobile.
