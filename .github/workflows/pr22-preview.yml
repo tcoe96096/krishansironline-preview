@@ -95,3 +95,5 @@ jobs:
 # Rebuild trigger: publish validated student dashboard source commit 2d786ae3975fe1ddabce38691d5659f037802c4e to Preview only.
 
 # Rebuild trigger: final integration source includes the live admin content typing declaration.
+
+# Rebuild trigger: remove duplicate global Window declaration in preview source.
