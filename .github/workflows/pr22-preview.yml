@@ -121,3 +121,5 @@ jobs:
 # Rebuild trigger: compact mobile brand lockup, hide mobile tagline, and balance header controls.
 
 # Rebuild trigger: revert compact branding tweaks and show student login icon only on mobile.
+
+# Rebuild trigger: mobile navigation now contains Search, HI/EN, and Student Login after Menu.
