@@ -80,3 +80,5 @@ jobs:
 # Rebuild trigger: use test language selector for attempt-limit messaging.
 
 # Rebuild trigger: refresh visible attempt-limit message on language toggle.
+
+# Rebuild trigger: derive attempt-limit alert language directly from selected test language.
