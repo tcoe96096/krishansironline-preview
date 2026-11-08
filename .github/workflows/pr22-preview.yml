@@ -117,3 +117,5 @@ jobs:
 # Rebuild trigger: mobile header uses a clean two-row layout for branding and controls.
 
 # Rebuild trigger: correct mobile header flex column layout to prevent branding compression.
+
+# Rebuild trigger: compact mobile brand lockup, hide mobile tagline, and balance header controls.
