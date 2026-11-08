@@ -84,3 +84,5 @@ jobs:
 # Rebuild trigger: derive attempt-limit alert language directly from selected test language.
 
 # Rebuild trigger: preserve GitHub Pages Preview base path during internal navigation.
+
+# Rebuild trigger: fix BASE_URL regex syntax and strip deployment prefix in route parsing.
