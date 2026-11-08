@@ -68,3 +68,5 @@ jobs:
       - name: Deploy preview site
         id: deployment
         uses: actions/deploy-pages@v4
+
+# Rebuild trigger for automatic test submission when the timer expires.
