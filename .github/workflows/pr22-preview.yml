@@ -119,3 +119,5 @@ jobs:
 # Rebuild trigger: correct mobile header flex column layout to prevent branding compression.
 
 # Rebuild trigger: compact mobile brand lockup, hide mobile tagline, and balance header controls.
+
+# Rebuild trigger: revert compact branding tweaks and show student login icon only on mobile.
