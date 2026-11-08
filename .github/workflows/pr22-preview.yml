@@ -97,3 +97,5 @@ jobs:
 # Rebuild trigger: final integration source includes the live admin content typing declaration.
 
 # Rebuild trigger: remove duplicate global Window declaration in preview source.
+
+# Rebuild trigger: compact floating student login button for mobile screens.
