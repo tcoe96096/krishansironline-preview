@@ -8,7 +8,7 @@ on:
       source_ref:
         description: 'Website branch or tag to build for Preview (not Live)'
         required: true
-        default: 'feature/student-dashboard-supabase-integration'
+        default: 'preview/student-system-live-design-integration'
         type: string
   push:
     branches: ["main"]
@@ -34,7 +34,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: tcoe96096/krishansironline
-          ref: ${{ inputs.source_ref || 'feature/student-dashboard-supabase-integration' }}
+          ref: ${{ inputs.source_ref || 'preview/student-system-live-design-integration' }}
           path: source
 
       - name: Set up Node.js
@@ -45,6 +45,10 @@ jobs:
       - name: Install dependencies
         working-directory: source
         run: npm install --legacy-peer-deps
+
+      - name: TypeScript validation
+        working-directory: source
+        run: npm run lint
 
       - name: Build redesign for preview URL
         working-directory: source
