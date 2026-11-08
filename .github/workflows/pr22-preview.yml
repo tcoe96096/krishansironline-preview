@@ -131,3 +131,5 @@ jobs:
 # Rebuild trigger: improve mobile test card padding, typography, and metadata spacing.
 
 # Rebuild trigger: responsive test cards, searchable test catalogue, class filter, and balanced selected-test summary.
+
+# Rebuild trigger: use a single-column test catalogue below desktop width and keep search/filter full-width on mobile.
