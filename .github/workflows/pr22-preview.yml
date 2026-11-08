@@ -133,3 +133,5 @@ jobs:
 # Rebuild trigger: responsive test cards, searchable test catalogue, class filter, and balanced selected-test summary.
 
 # Rebuild trigger: use a single-column test catalogue below desktop width and keep search/filter full-width on mobile.
+
+# Rebuild trigger: embed Login/Continue/Start Test action in each assessment card and remove standalone login/start gates.
