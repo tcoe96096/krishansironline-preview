@@ -129,3 +129,5 @@ jobs:
 # Rebuild trigger: keep mobile Menu on the left and utility controls on the right.
 
 # Rebuild trigger: improve mobile test card padding, typography, and metadata spacing.
+
+# Rebuild trigger: responsive test cards, searchable test catalogue, class filter, and balanced selected-test summary.
