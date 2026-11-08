@@ -103,3 +103,5 @@ jobs:
 # Rebuild trigger: reduce floating student login label to Login on mobile.
 
 # Rebuild trigger: restore full Student Login label on mobile.
+
+# Rebuild trigger: align student dashboard available-test count with class eligibility.
