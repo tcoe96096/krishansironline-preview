@@ -7,7 +7,7 @@ on:
       source_ref:
         description: 'Website branch or tag to build for Preview (not Live)'
         required: true
-        default: 'main'
+        default: 'feature/student-dashboard-supabase-integration'
         type: string
   push:
     branches: ["main"]
