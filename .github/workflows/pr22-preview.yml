@@ -76,3 +76,5 @@ jobs:
 # Rebuild trigger for attempt-history precheck message.
 
 # Rebuild trigger for language-aware attempt-limit message.
+
+# Rebuild trigger: use test language selector for attempt-limit messaging.
