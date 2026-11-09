@@ -148,3 +148,5 @@ jobs:
 # Rebuild trigger: keep Google OAuth callback on the Admin Preview path after sign-in.
 
 # Rebuild trigger: publish the read-only Admin Dashboard UI design preview route.
+
+# Rebuild trigger: remove student portal quick-switch links from Admin design preview.
