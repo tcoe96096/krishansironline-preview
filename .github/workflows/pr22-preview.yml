@@ -157,3 +157,4 @@ jobs:
 
 # Rebuild trigger: publish local draft restore, extra page sections and responsive design preview controls.
 # Rebuild trigger: Academic Management Preview module with local bilingual CRUD drafts.
+# Rebuild trigger: rebuild Preview after Academic Management template literal syntax fix 53aa967bbece61df4f5c2b2809c242aaa2451439.
