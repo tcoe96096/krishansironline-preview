@@ -54,6 +54,12 @@ jobs:
         working-directory: source
         run: npm run build -- --base=/krishansironline-preview/
 
+      - name: Create separate Admin Preview entry URL
+        working-directory: source
+        run: |
+          mkdir -p dist/admin
+          cp dist/index.html dist/admin/index.html
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
