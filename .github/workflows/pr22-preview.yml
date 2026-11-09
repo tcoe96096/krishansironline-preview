@@ -150,3 +150,5 @@ jobs:
 # Rebuild trigger: publish the read-only Admin Dashboard UI design preview route.
 
 # Rebuild trigger: remove student portal quick-switch links from Admin design preview.
+
+# Rebuild trigger: publish the Website Management editor UI in the Admin Preview.
