@@ -1,6 +1,5 @@
-# Dedicated preview deployment for the latest full website redesign and review updates.
-# Rebuild trigger for the student attempt-limit friendly message.
-name: Deploy Full Website Redesign Preview # restore original outer teacher frame padding
+# Dedicated Preview deployment. This workflow never deploys the production site.
+name: Deploy Full Website Redesign Preview
 
 on:
   workflow_dispatch:
@@ -10,14 +9,15 @@ on:
         required: true
         default: 'preview/student-system-live-design-integration'
         type: string
+  schedule:
+    # Refresh the Preview from the approved source branch every six hours.
+    - cron: '17 */6 * * *'
   push:
     branches: ["main"]
     paths: [".github/workflows/pr22-preview.yml"]
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: preview-site
@@ -25,16 +25,20 @@ concurrency:
 
 jobs:
   build:
+    name: Build and validate Preview
     runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: read
     steps:
       - name: Checkout preview repository
         uses: actions/checkout@v4
 
-      - name: Checkout redesign source
+      - name: Checkout approved Preview source
         uses: actions/checkout@v4
         with:
           repository: tcoe96096/krishansironline
-          ref: ${{ inputs.source_ref || 'preview/student-system-live-design-integration' }}
+          ref: ${{ github.event.inputs.source_ref || 'preview/student-system-live-design-integration' }}
           path: source
 
       - name: Set up Node.js
@@ -50,112 +54,54 @@ jobs:
         working-directory: source
         run: npm run lint
 
-      - name: Build redesign for preview URL
+      - name: Build website for Preview
         working-directory: source
         run: npm run build -- --base=/krishansironline-preview/
 
-      - name: Create separate Admin Preview entry URL
+      - name: Create separate Admin Preview entry URLs
         working-directory: source
         run: |
           mkdir -p dist/admin dist/admin-preview
           cp dist/index.html dist/admin/index.html
           cp dist/index.html dist/admin-preview/index.html
 
+      - name: Verify generated Preview pages
+        working-directory: source
+        run: |
+          set -eu
+          test -s dist/index.html
+          test -s dist/admin/index.html
+          test -s dist/admin-preview/index.html
+          test -s dist/classes/index.html
+          test -s dist/online-tests/index.html
+          test -s dist/study-materials/index.html
+          test -s dist/results/index.html
+          test -s dist/constitution/index.html
+          test -s dist/current-affairs/index.html
+          test -s dist/about/index.html
+          test -s dist/contact/index.html
+          echo "All required Preview entry pages are present."
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload preview artifact
+      - name: Upload validated Preview artifact
         uses: actions/upload-pages-artifact@v4
         with:
           path: source/dist
 
   deploy:
+    name: Publish Preview only
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     needs: build
+    permissions:
+      pages: write
+      id-token: write
     steps:
-      - name: Deploy preview site
+      - name: Deploy Preview site
         id: deployment
         uses: actions/deploy-pages@v4
-
-# Rebuild trigger for automatic test submission when the timer expires.
-
-# Rebuild trigger for robust Supabase attempt-limit error detection.
-
-# Rebuild trigger for attempt-history precheck message.
-
-# Rebuild trigger for language-aware attempt-limit message.
-
-# Rebuild trigger: use test language selector for attempt-limit messaging.
-
-# Rebuild trigger: refresh visible attempt-limit message on language toggle.
-
-# Rebuild trigger: derive attempt-limit alert language directly from selected test language.
-
-# Rebuild trigger: preserve GitHub Pages Preview base path during internal navigation.
-
-# Rebuild trigger: fix BASE_URL regex syntax and strip deployment prefix in route parsing.
-
-
-# Rebuild trigger: publish validated student dashboard source commit 2d786ae3975fe1ddabce38691d5659f037802c4e to Preview only.
-
-# Rebuild trigger: final integration source includes the live admin content typing declaration.
-
-# Rebuild trigger: remove duplicate global Window declaration in preview source.
-
-# Rebuild trigger: compact floating student login button for mobile screens.
-
-# Rebuild trigger: reduce floating student login label to Login on mobile.
-
-# Rebuild trigger: restore full Student Login label on mobile.
-
-# Rebuild trigger: align student dashboard available-test count with class eligibility.
-
-# Rebuild trigger: display authenticated student name in header and floating account control.
-
-# Rebuild trigger: add authenticated student account dropdown menu in Preview.
-
-# Rebuild trigger: responsive professional student dashboard popup redesign in Preview.
-
-# Rebuild trigger: responsive HI/EN mobile and Hindi/English desktop language switcher.
-
-# Rebuild trigger: mobile header uses a clean two-row layout for branding and controls.
-
-# Rebuild trigger: correct mobile header flex column layout to prevent branding compression.
-
-# Rebuild trigger: compact mobile brand lockup, hide mobile tagline, and balance header controls.
-
-# Rebuild trigger: revert compact branding tweaks and show student login icon only on mobile.
-
-# Rebuild trigger: mobile navigation now contains Search, HI/EN, and Student Login after Menu.
-
-# Rebuild trigger: remove duplicate mobile Menu and unify Search, HI/EN, and Student Login controls.
-
-# Rebuild trigger: keep mobile Menu on the left and utility controls on the right.
-
-# Rebuild trigger: improve mobile test card padding, typography, and metadata spacing.
-
-# Rebuild trigger: responsive test cards, searchable test catalogue, class filter, and balanced selected-test summary.
-
-# Rebuild trigger: use a single-column test catalogue below desktop width and keep search/filter full-width on mobile.
-
-# Rebuild trigger: embed Login/Continue/Start Test action in each assessment card and remove standalone login/start gates.
-
-# Rebuild trigger: publish the separated Admin Google Login flow from the approved Preview source branch.
-
-# Rebuild trigger: keep Google OAuth callback on the Admin Preview path after sign-in.
-
-# Rebuild trigger: publish the read-only Admin Dashboard UI design preview route.
-
-# Rebuild trigger: remove student portal quick-switch links from Admin design preview.
-
-# Rebuild trigger: publish the Website Management editor UI in the Admin Preview.
-
-# Rebuild trigger: publish all-pages, page drafts, brand media, themes and frame controls in the Admin Preview.
-
-# Rebuild trigger: publish local draft restore, extra page sections and responsive design preview controls.
-# Rebuild trigger: Academic Management Preview module with local bilingual CRUD drafts.
-# Rebuild trigger: rebuild Preview after Academic Management template literal syntax fix 53aa967bbece61df4f5c2b2809c242aaa2451439.
-# Rebuild trigger: expanded Academic Management session, syllabus, material/test mapping, CSV, and version controls.
