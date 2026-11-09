@@ -143,3 +143,5 @@ jobs:
 # Rebuild trigger: embed Login/Continue/Start Test action in each assessment card and remove standalone login/start gates.
 
 # Rebuild trigger: publish the separated Admin Google Login flow from the approved Preview source branch.
+
+# Rebuild trigger: keep Google OAuth callback on the Admin Preview path after sign-in.
