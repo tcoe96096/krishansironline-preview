@@ -156,3 +156,4 @@ jobs:
 # Rebuild trigger: publish all-pages, page drafts, brand media, themes and frame controls in the Admin Preview.
 
 # Rebuild trigger: publish local draft restore, extra page sections and responsive design preview controls.
+# Rebuild trigger: Academic Management Preview module with local bilingual CRUD drafts.
