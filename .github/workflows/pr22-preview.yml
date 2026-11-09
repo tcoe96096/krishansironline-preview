@@ -141,3 +141,5 @@ jobs:
 # Rebuild trigger: use a single-column test catalogue below desktop width and keep search/filter full-width on mobile.
 
 # Rebuild trigger: embed Login/Continue/Start Test action in each assessment card and remove standalone login/start gates.
+
+# Rebuild trigger: publish the separated Admin Google Login flow from the approved Preview source branch.
