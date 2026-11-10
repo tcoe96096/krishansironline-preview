@@ -56,6 +56,9 @@ jobs:
 
       - name: Build website for Preview
         working-directory: source
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.PREVIEW_SUPABASE_URL }}
+          VITE_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.PREVIEW_SUPABASE_PUBLISHABLE_KEY }}
         run: npm run build -- --base=/krishansironline-preview/
 
       - name: Create separate Admin Preview entry URLs
