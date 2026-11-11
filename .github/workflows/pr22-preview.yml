@@ -57,7 +57,7 @@ jobs:
           VITE_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.PREVIEW_SUPABASE_PUBLISHABLE_KEY }}
         run: npm run build -- --base=/krishansironline-preview/
 
-      # Keep the production-based student candidate isolated from the full redesign preview; refresh after registration safety gate.
+      # Keep the production-based student candidate isolated from the full redesign preview; refresh after scorecard total-marks fix.
       - name: Checkout Student Release Candidate
         uses: actions/checkout@v4
         with:
