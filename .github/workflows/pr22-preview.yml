@@ -57,6 +57,33 @@ jobs:
           VITE_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.PREVIEW_SUPABASE_PUBLISHABLE_KEY }}
         run: npm run build -- --base=/krishansironline-preview/
 
+      - name: Checkout Student Release Candidate
+        uses: actions/checkout@v4
+        with:
+          repository: tcoe96096/krishansironline
+          ref: feature/student-learning-progress-production
+          path: student-candidate
+
+      - name: Install Student Release Candidate dependencies
+        working-directory: student-candidate
+        run: npm install --legacy-peer-deps
+
+      - name: Validate Student Release Candidate TypeScript
+        working-directory: student-candidate
+        run: npm run lint
+
+      - name: Build Student Release Candidate in isolated subpath
+        working-directory: student-candidate
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.PREVIEW_SUPABASE_URL }}
+          VITE_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.PREVIEW_SUPABASE_PUBLISHABLE_KEY }}
+        run: npm run build -- --base=/krishansironline-preview/student-release-candidate/
+
+      - name: Add Student Release Candidate to Preview artifact
+        run: |
+          mkdir -p source/dist/student-release-candidate
+          cp -a student-candidate/dist/. source/dist/student-release-candidate/
+
       - name: Create separate Admin Preview entry URLs
         working-directory: source
         run: |
@@ -79,7 +106,11 @@ jobs:
           test -s dist/current-affairs/index.html
           test -s dist/about/index.html
           test -s dist/contact/index.html
-          echo "All required Preview entry pages are present."
+          test -s dist/student-release-candidate/index.html
+          test -s dist/student-release-candidate/classes/index.html
+          test -s dist/student-release-candidate/online-tests/index.html
+          test -s dist/student-release-candidate/study-materials/index.html
+          echo "All Preview and Student Release Candidate entry pages are present."
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
