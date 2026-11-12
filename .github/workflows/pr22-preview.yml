@@ -1,4 +1,4 @@
-# Dedicated Preview deployment. This workflow never deploys the production site. Latest source includes verified site-config service.
+# Dedicated Preview deployment. Includes Admin bulk JSON test import validation. This workflow never deploys the production site. Latest source includes verified site-config service.
 name: Deploy Full Website Redesign Preview
 
 on:
